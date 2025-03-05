@@ -4,6 +4,9 @@ This folder has the following structure:
 
 The project consists of 3 empirical chapters:
 
+## Chapter 2 
+This chapter is currently under review and will upon publication be made available.
+
 ## Chapter 3
 - `code/py/`: Python source code organized by functionality
   - `main/`: Core functionality modules
