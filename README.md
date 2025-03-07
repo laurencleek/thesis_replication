@@ -6,7 +6,8 @@ The project consists of 3 empirical chapters:
 
 ## Chapter 2 
 This chapter is currently under review and will upon publication be made available.
-# Overview
+
+### Overview
 This repository contains replication code for "_How Central Bank Independence Shapes Monetary Policy Communication: A Large Language Model Application_".
 It includes code to:
 - Calculate yearly indices of dominance and coordination based on sentence-level classifications using the Gemini LLM
@@ -92,13 +93,13 @@ It contains all the codes to pre-process the dataset, run ChatGPT on two million
 Moreover, we provide our manually classified validation sample `inputdata/validation_sample_all.xlsx` and the codes to conduct prompt engineering experiments, fine-tune GPT-3.5, and assess the classification quality of various ChatGPT models and Gemini Pro against this validation set.
 We share a yearly aggregation of our index `dominance_coordination_dataset.csv`. This file is sufficient to produce all charts inside the appendix and main part of the paper. Importantly, we don't include any speeches or sentence-level results. The output files are more than a gigabyte in size and too large for this repository. To rerun the full analysis, the speech data would need to be scraped with the python code [here](https://github.com/HanssonMagnus/scrape_bis). We do, however, provide the sentence-level classification of our prompt engineering results, validation exercise, and model comparisons. These are stored as Pandas DataFrames in `.pkl` format inside the `outputdata` folder.
 
-# Instructions to run codes
+### Instructions to run codes
 - To rerun any of our analyses, an API key for ChatGPT and/or Gemini needs to be set inside the `llm_functions.py` file. Also note that these LLMs, even at a temperature set to zero, are non-deterministic. Exact results vary with each run, although with ChatGPT, usually 97%-99% of sentences are identically classified across two runs. In addition, changes to the model on OpenAI's/Google's side can impact results.
 - To run R codes, the working directory should be set to the root of the project.
 - Python codes expect to be run from the folder they are in.
 - Validation, prompt engineering, and model comparison codes are self-contained and can be run with the inputs provided inside this repository, provided that an API key is set.
 
-# Included files
+### Included files
 The codes folder contains the following files:
 - `0_text_preprocessing.py` This file runs the preprocessing steps described in the appendix.
 - `1_chat_gpt_main_analysis.py` This code consists of the code required to run the full dataset. It requires the output produced by `0_text_preprocessing.py`.
@@ -108,7 +109,7 @@ The codes folder contains the following files:
 - `merge_datasets.R` This R code calculates our relative indicator of dominance and coordination. It requires the outputs saved by `1_chat_gpt_main_analysis.py`. It also sketches how our shared dataset `dominance_coordination_dataset.csv` is produced (without including the third-party data sources).
 - `run_all_charts.R` Produces all of the charts.
 
-# Replication of Charts:
+### Replication of Charts:
 All our charts can be replicated with the R codes inside the `codes/figures` folder. Run `run_all_charts.R` to produce all charts. The R files read from the ChatGPT results provided inside the `outputdata` and the yearly aggregation of the full dataset `dominance_coordination_dataset.csv`. No access to ChatGPT is required to produce the charts. These are the files to produce the charts:
 - `bin_scatter.R` Scatter charts presenting the development of dominance/coordination over time.
 - `correlation.R` Pooled regressions.
@@ -119,5 +120,5 @@ All our charts can be replicated with the R codes inside the `codes/figures` fol
 - `temperature_charts.R` Prompt engineering regarding the temperature setting.
 Common functions and settings to change the size of the charts are inside `functions_and_settings.R`.
 
-# Prompts
+### Prompts
 The instructions part of our prompts are stored in the `prompts` folder. The sentences/excerpts are automatically appended to the prompt. We use a `.yaml` format to store the prompts. Our final instructions for level 1, level 2 and level 3 are in the `l1`, `l2`, `l3` subfolders. To change the prompts either modify the prompt file or modify the python code to load a different prompt.
