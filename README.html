@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>readme</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="README_files/libs/clipboard/clipboard.min.js"></script>
+<script src="README_files/libs/quarto-html/quarto.js"></script>
+<script src="README_files/libs/quarto-html/popper.min.js"></script>
+<script src="README_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="README_files/libs/quarto-html/anchor.min.js"></script>
+<link href="README_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="README_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="README_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="README_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="README_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+
+<section id="thesis-replication-the-rise-of-central-bank-talk-essays-in-central-bank-communication-and-independence" class="level1">
+<h1>Thesis Replication: The Rise of Central Bank Talk: Essays in Central bank Communication and Independence</h1>
+<p>This folder has the following structure:</p>
+<p>The project consists of 3 empirical chapters:</p>
+<section id="chapter-2" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-2">Chapter 2</h2>
+<p>This chapter is currently under review and will upon publication be made available. # Overview This repository contains replication code for “<em>How Central Bank Independence Shapes Monetary Policy Communication: A Large Language Model Application</em>”. It includes code to: - Calculate yearly indices of dominance and coordination based on sentence-level classifications using the Gemini LLM - Merge the aggregated speeches dataset with other datasets as described in the paper - Run the empirical analysis and produce tables and figures of both the appendix and the main text</p>
+</section>
+</section>
+<section id="repository-structure" class="level1">
+<h1>Repository Structure</h1>
+<p>The repository is structured as follows:</p>
+<pre><code>cbi-llm
+│   Readme.md
+│   run_graphs_and_tables.R
+│
+├───codes
+│   ├───constants
+│   ├───dataset_processing
+│   ├───figures
+│   ├───functions
+│   ├───llm
+│   └───tables
+│
+├───data
+│   ├───input
+│   └───processed
+│
+└───output
+    ├───figures
+    └───tables</code></pre>
+<p>All codes are stored in the <code>codes</code> folder grouped by function. There are self-contained functions to produce figures and tables from the paper in the <code>figures</code> and <code>tables</code> sub-folders. Settings and variables names are stored in the <code>constants</code> folder. <code>dataset_processing</code> contains the codes to produce our dataset, including calculating the textual measures of central bank communication from the sentence level classification and merging the further datasets mentioned in the paper. Codes to run the Gemini classification, fine-tune a model and run the topic model are in the <code>llm</code> folder. The data folder contains <code>input</code> files and intermediate processing data files which are stored under <code>data/processed</code>. Graphs and tables, are stored under <code>output</code>.</p>
+</section>
+<section id="instructions-to-run-code" class="level1">
+<h1>Instructions to Run Code</h1>
+<p>Our code can be grouped into 3 parts: 1. LLM fine-tuning, metadata extraction, and classification 2. Dataset aggregation 3. Empirical analysis</p>
+<p>All three steps can be run independently. We provide the outputs of each step in <code>data/processed/</code>. To replicate results and work with the data from the paper, we strongly recommend to start with step 2 or 3, as running the entire Gemini process is impractical and complicated to setup (see details below). To quickly produce the tables and figures, run <code>run_graphs_and_tables.R</code>.</p>
+<ul>
+<li><p>The model fine-tuning, metadata extraction, and classification of the full dataset form the basis for further analysis. While the LLM code should run in principle, it is provided mainly for reference. The Gemini code requires the Google Cloud SDK to be installed locally and a cloud project configured with OAuth authentication for fine-tuning to be accessible. Also, the fine-tuning is not deterministic and thus the fine-tuned model will be marginally different from our fine-tune. It is presently not possible to share fine-tuned models across accounts. Further, classifying the entire dataset is very time and cost-intensive. (Outside of Europe, Gemini has a free tier, but with current rate limits, it takes months to process the entire dataset). Results may not exactly replicate due to potential model changes and inherent variation in model responses. However, we expect that most classifications would be the same in a complete rerun. We provide all sentence-level classifications obtained from our Gemini run in <code>data/processed/dom_corp_classification_sentence_level.parquet</code>, which can be merged with the sentences themselves in <code>data/processed/sentence_level_bis.parquet</code>.</p></li>
+<li><p>To produce our dataset, which forms the basis for the instrumental variable (IV) and difference-in-differences (DiD) analysis, the sentence-level classifications are aggregated and merged with additional datasets in <code>dataset_processing/merge_datasets.R</code>. The necessary files from other datasets are provided in the subfolders of <code>data/input/</code>, with the exception of the V-Dem dataset and the adjustments we make to the currency peg dataset. For these datasets, run <code>dataset_processing/prepare_currency_peg_file.R</code> and <code>dataset_processing/vdem.R</code>.</p></li>
+<li><p>For the empirical analysis, we provide self-contained code for each figure and table. For the difference-in-differences analysis, they load functions from the <code>codes/functions</code> folder. The <code>diff_in_diff_functions.R</code> contains most of the logic of the DiD analysis. It implements functions to run different estimators, placebo tests, treatment indicator definitions, and sample configurations, which form the basis for the numerous robustness checks conducted in our paper.</p></li>
+<li><p>To run the R codes the following packages need to be installed:</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These packages are on CRAN:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"readxl"</span>, <span class="st">"haven"</span>, <span class="st">"lubridate"</span>, <span class="st">"zoo"</span>, <span class="st">"arrow"</span>, <span class="st">"countrycode"</span>, <span class="st">"vdemdata"</span>, <span class="st">"patchwork"</span>, <span class="st">"binsreg"</span>, <span class="st">"slider"</span>, <span class="st">"ggpattern"</span>, <span class="st">"geosphere"</span>, <span class="st">"sf"</span>, <span class="st">"rnaturalearth"</span>, <span class="st">"knitr"</span>, <span class="st">"kableExtra"</span>, <span class="st">"ggbeeswarm"</span>, <span class="st">"ggridges"</span>, <span class="st">"did"</span>, <span class="st">"did2s"</span>, <span class="st">"fixest"</span>,  <span class="st">"eventstudyr"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># For the didimputation package, the development version should be installed as otherwise specifying the leads/lags as it is done in the code will not work</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"kylebutts/didimputation"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Figure 5 in the paper uses ggsankey which is not on CRAN:</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"davidsjoberg/ggsankey"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>R codes should always be run with the working directory set to the root of the folder structure. Python codes expect to be run from the folder they are in. To replicate a specific figure it is recommended to look for the figure under <code>codes/figures</code>. To produce all graphs at once run <code>run_graphs_and_tables.R</code>.</p>
+<section id="chapter-3" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-3">Chapter 3</h2>
+<ul>
+<li><code>code/py/</code>: Python source code organized by functionality
+<ul>
+<li><code>main/</code>: Core functionality modules</li>
+<li><code>sequence/</code>: Sequence analysis modules<br>
+</li>
+<li><code>timeseries/</code>: Time series analysis modules</li>
+</ul></li>
+<li><code>data/</code>: Input data files
+<ul>
+<li><code>Eurobarometer/</code>: Survey data</li>
+<li><code>google_trends/</code>: Google Trends data</li>
+<li>Speech data and FT frequency data</li>
+</ul></li>
+<li><code>output/</code>: Generated output files
+<ul>
+<li>Figures for paper and appendix</li>
+<li>Tables for paper and appendix<br>
+</li>
+<li>Various timeseries datasets</li>
+</ul></li>
+<li>Root level analysis scripts:
+<ul>
+<li><code>main.py</code>: Main execution script</li>
+<li><code>analysis_sequence.py</code>: Sequence analysis</li>
+<li><code>analysis_timeseries.py</code>: Time series analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="chapter-4" class="level2">
+<h2 class="anchored" data-anchor-id="chapter-4">Chapter 4</h2>
+<p>This repository contains replication codes for <a href="https://osf.io/preprints/socarxiv/78wnp">“Introducing a Textual Measure of Central Bank Policy Interactions Using ChatGPT”</a>. It contains all the codes to pre-process the dataset, run ChatGPT on two million sentences, and finally produce our indicator and aggregated results. Moreover, we provide our manually classified validation sample <code>inputdata/validation_sample_all.xlsx</code> and the codes to conduct prompt engineering experiments, fine-tune GPT-3.5, and assess the classification quality of various ChatGPT models and Gemini Pro against this validation set. We share a yearly aggregation of our index <code>dominance_coordination_dataset.csv</code>. This file is sufficient to produce all charts inside the appendix and main part of the paper. Importantly, we don’t include any speeches or sentence-level results. The output files are more than a gigabyte in size and too large for this repository. To rerun the full analysis, the speech data would need to be scraped with the python code <a href="https://github.com/HanssonMagnus/scrape_bis">here</a>. We do, however, provide the sentence-level classification of our prompt engineering results, validation exercise, and model comparisons. These are stored as Pandas DataFrames in <code>.pkl</code> format inside the <code>outputdata</code> folder.</p>
+</section>
+</section>
+<section id="instructions-to-run-codes" class="level1">
+<h1>Instructions to run codes</h1>
+<ul>
+<li>To rerun any of our analyses, an API key for ChatGPT and/or Gemini needs to be set inside the <code>llm_functions.py</code> file. Also note that these LLMs, even at a temperature set to zero, are non-deterministic. Exact results vary with each run, although with ChatGPT, usually 97%-99% of sentences are identically classified across two runs. In addition, changes to the model on OpenAI’s/Google’s side can impact results.</li>
+<li>To run R codes, the working directory should be set to the root of the project.</li>
+<li>Python codes expect to be run from the folder they are in.</li>
+<li>Validation, prompt engineering, and model comparison codes are self-contained and can be run with the inputs provided inside this repository, provided that an API key is set.</li>
+</ul>
+</section>
+<section id="included-files" class="level1">
+<h1>Included files</h1>
+<p>The codes folder contains the following files: - <code>0_text_preprocessing.py</code> This file runs the preprocessing steps described in the appendix. - <code>1_chat_gpt_main_analysis.py</code> This code consists of the code required to run the full dataset. It requires the output produced by <code>0_text_preprocessing.py</code>. - <code>2_validation_and_robustness.py</code> This file contains the code for the robustness checks, prompt engineering results, and different GPT versions. It requires only our validation set as input <code>validation_sample_all.xlsx</code>. - <code>3_fine_tuning_and_few_shot.py</code> This file constructs a training dataset from our validation set, trains a fine-tuned GPT 3.5 model, and evaluates it with the remaining sample. Moreover, it contains code to run Gemini Pro using (i) the same prompts as ChatGPT and (ii) a few-shot prompting strategy. - <code>llm_functions.py</code> Functions that are shared by the python codes are in this file. Most notably, it contains the function that takes a dataframe as input and calls either the Gemini or ChatGPT API with our prompt design. This function allows for parallel API queries to maximize rate limits. - <code>merge_datasets.R</code> This R code calculates our relative indicator of dominance and coordination. It requires the outputs saved by <code>1_chat_gpt_main_analysis.py</code>. It also sketches how our shared dataset <code>dominance_coordination_dataset.csv</code> is produced (without including the third-party data sources). - <code>run_all_charts.R</code> Produces all of the charts.</p>
+</section>
+<section id="replication-of-charts" class="level1">
+<h1>Replication of Charts:</h1>
+<p>All our charts can be replicated with the R codes inside the <code>codes/figures</code> folder. Run <code>run_all_charts.R</code> to produce all charts. The R files read from the ChatGPT results provided inside the <code>outputdata</code> and the yearly aggregation of the full dataset <code>dominance_coordination_dataset.csv</code>. No access to ChatGPT is required to produce the charts. These are the files to produce the charts: - <code>bin_scatter.R</code> Scatter charts presenting the development of dominance/coordination over time. - <code>correlation.R</code> Pooled regressions. - <code>crisis.R</code> Differences in fiscal dominance in crisis vs.&nbsp;non-crisis years. - <code>levels_over_time.R</code> Shows the development of all three classification levels over time. - <code>sentence_count_charts.R</code> Prompt engineering regarding the number of sentences. - <code>stability.R</code> Stability of ChatGPT vs.&nbsp;Uncertainty in human coding. - <code>temperature_charts.R</code> Prompt engineering regarding the temperature setting. Common functions and settings to change the size of the charts are inside <code>functions_and_settings.R</code>.</p>
+</section>
+<section id="prompts" class="level1">
+<h1>Prompts</h1>
+<p>The instructions part of our prompts are stored in the <code>prompts</code> folder. The sentences/excerpts are automatically appended to the prompt. We use a <code>.yaml</code> format to store the prompts. Our final instructions for level 1, level 2 and level 3 are in the <code>l1</code>, <code>l2</code>, <code>l3</code> subfolders. To change the prompts either modify the prompt file or modify the python code to load a different prompt.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
