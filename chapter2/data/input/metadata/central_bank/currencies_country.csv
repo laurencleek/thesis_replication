@@ -1,0 +1,125 @@
+central_bank,country,currency,currency_code,advanced,cb_location,cb_latitude,cb_longitude
+european central bank,EA,Euro,EUR,1,Frankfurt,50.1109,8.6821
+board of governors of the federal reserve system,USA,US Dollar,USD,1,Washington,38.9072,-77.0369
+bank of england,GBR,Pound Sterling,GBP,1,London,51.5074,-0.1278
+reserve bank of india,IND,Indian Rupee,INR,0,Mumbai,19.076,72.8777
+deutsche bundesbank,DEU,Euro,EUR,1,Frankfurt,50.1109,8.6821
+bank of japan,JPN,Yen,JPY,1,Tokyo,35.6895,139.6917
+sveriges riksbank,SWE,Swedish Krona,SEK,1,Stockholm,59.3293,18.0686
+reserve bank of australia,AUS,Australian Dollar,AUD,1,Sydney,-33.8688,151.2093
+bank of canada,CAN,Canadian Dollar,CAD,1,Ottawa,45.4215,-75.6972
+central bank of norway,NOR,Norwegian Krone,NOK,1,Oslo,59.9139,10.7522
+federal reserve bank of new york,USA,US Dollar,USD,1,New York City,40.7128,-74.006
+south african reserve bank,ZAF,Rand,ZAR,0,Pretoria,-25.7479,28.2293
+bank of italy,ITA,Euro,EUR,1,Rome,41.9028,12.4964
+central bank of malaysia,MYS,Malaysian Ringgit,MYR,0,Kuala Lumpur,3.139,101.6869
+bank of spain,ESP,Euro,EUR,1,Madrid,40.4168,-3.7038
+central bank of the philippines,PHL,Philippine Peso,PHP,0,Manila,14.5995,120.9842
+swiss national bank,CHE,Swiss Franc,CHF,1,Bern,47.3769,8.5417
+central bank of ireland,IRL,Euro,EUR,1,Dublin,53.3498,-6.2603
+monetary authority of singapore,SGP,Singapore Dollar,SGD,1,Singapore,1.3521,103.8198
+bank of france,FRA,Euro,EUR,1,Paris,48.8566,2.3522
+reserve bank of new zealand,NZL,New Zealand Dollar,NZD,1,Wellington,-41.2865,174.7762
+netherlands bank,NLD,Euro,EUR,1,Amsterdam,52.3676,4.9041
+hong kong monetary authority,HKG,Hong Kong Dollar,HKD,1,Hong Kong,22.3193,114.1694
+central bank of chile,CHL,Chilean Peso,CLP,0,Santiago,-33.4489,-70.6693
+bank of thailand,THA,Baht,THB,0,Bangkok,13.7563,100.5018
+bank of albania,ALB,Lek,ALL,0,Tirana,41.3275,19.8189
+bank of finland,FIN,Euro,EUR,1,Helsinki,60.1699,24.9384
+bank of greece,GRC,Euro,EUR,1,Athens,37.9838,23.7275
+bank of mauritius,MUS,Mauritius Rupee,MUR,0,Port Louis,-20.1609,57.4977
+state bank of pakistan,PAK,Pakistan Rupee,PKR,0,Islamabad,33.6844,73.0479
+people's bank of china,CHN,Yuan Renminbi,CNY,0,Beijing,39.9042,116.4074
+national bank of denmark,DNK,Danish Krone,DKK,1,Copenhagen,55.6761,12.5683
+reserve bank of fiji,FJI,Fiji Dollar,FJD,0,Suva,-18.1248,178.4501
+central bank of the republic of turkey,TUR,Turkish Lira,TRY,0,Ankara,39.9334,32.8597
+central bank of iceland,ISL,Iceland Krona,ISK,1,Reykjavik,64.1466,-21.9426
+bank indonesia,IDN,Rupiah,IDR,0,Jakarta,-6.2088,106.8456
+bank of mexico,MEX,Mexican Peso,MXN,0,Mexico City,19.4326,-99.1332
+central bank of the republic of austria,AUT,Euro,EUR,1,Vienna,48.2082,16.3738
+central bank of sri lanka,LKA,Sri Lanka Rupee,LKR,0,Colombo,6.9271,79.8612
+central bank of kenya,KEN,Kenyan Shilling,KES,0,Nairobi,-1.2864,36.8172
+central bank of trinidad and tobago,TTO,Trinidad and Tobago Dollar,TTD,0,Port of Spain,10.6549,-61.5019
+bank of zambia,ZMB,Zambian Kwacha,ZMW,0,Lusaka,-15.3875,28.3228
+bank of israel,ISR,New Israeli Sheqel,ILS,1,Jerusalem,31.7683,35.2137
+bank of korea,KOR,Won,KRW,1,Seoul,37.5665,126.978
+bank of uganda,UGA,Uganda Shilling,UGX,0,Kampala,0.3476,32.5825
+central bank of malta,MLT,Euro,EUR,1,Valletta,35.8989,14.5146
+national bank of serbia,SRB,Serbian Dinar,RSD,0,Belgrade,44.7866,20.4489
+central bank of barbados,BRB,Barbados Dollar,BBD,0,Bridgetown,13.0969,-59.6145
+national bank of north macedonia,MKD,Denar,MKD,0,Skopje,41.9973,21.428
+bank of russia,RUS,Russian Ruble,RUB,0,Moscow,55.7558,37.6173
+central bank of luxembourg,LUX,Euro,EUR,1,Luxembourg City,49.6116,6.1319
+bank of portugal,PRT,Euro,EUR,1,Lisbon,38.7223,-9.1393
+national bank of romania,ROU,Romanian Leu,RON,0,Bucharest,44.4268,26.1025
+central bank of nigeria,NGA,Naira,NGN,0,Abuja,9.0579,7.4951
+federal reserve bank of philadelphia,USA,US Dollar,USD,1,Philadelphia,39.9526,-75.1652
+central bank of argentina,ARG,Argentine Peso,ARS,0,Buenos Aires,-34.6037,-58.3816
+bank of papua new guinea,PNG,Kina,PGK,0,Port Moresby,-9.4438,147.1803
+czech national bank,CZE,Czech Koruna,CZK,1,Prague,50.0755,14.4378
+national bank of belgium,BEL,Euro,EUR,1,Brussels,50.8503,4.3517
+bank of botswana,BWA,Pula,BWP,0,Gaborone,-24.6282,25.9231
+federal reserve bank of minneapolis,USA,US Dollar,USD,1,Minneapolis,44.9778,-93.265
+bank of ghana,GHA,Ghana Cedi,GHS,0,Accra,5.6037,-0.187
+bank of poland,POL,Zloty,PLN,0,Warsaw,52.2297,21.0122
+bank for international settlements,,,,,Basel,47.5596,7.5886
+inter-american development bank,,,,,Washington,38.9072,-77.0369
+bank of namibia,NAM,Namibia Dollar,NAD,0,Windhoek,-22.5609,17.0658
+bank of lithuania,LTU,Euro,EUR,1,Vilnius,54.6872,25.2797
+bulgarian national bank,BGR,Bulgarian Lev,BGN,0,Sofia,42.6977,23.3219
+federal reserve bank of dallas,USA,US Dollar,USD,1,Dallas,32.7767,-96.797
+federal reserve bank of kansas city,USA,US Dollar,USD,1,Kansas City,39.0997,-94.5786
+national bank of ukraine,UKR,Hryvnia,UAH,0,Kyiv,50.4501,30.5234
+bank of estonia,EST,Euro,EUR,1,Tallinn,59.437,24.7536
+central bank of bahrain,BHR,Bahraini Dinar,BHD,0,Manama,26.2235,50.5875
+federal reserve bank of chicago,USA,US Dollar,USD,1,Chicago,41.8781,-87.6298
+monetary authority of macao,MAC,Pataca,MOP,1,Macau,22.1987,113.5439
+eastern caribbean central bank,,East Caribbean Dollar,XCD,0,Basseterre,17.3026,-62.7177
+saudi arabian monetary agency,SAU,Saudi Riyal,SAR,0,Riyadh,24.7136,46.6753
+bank of jamaica,JAM,Jamaican Dollar,JMD,0,Kingston,18.0179,-76.8099
+central bank of cyprus,CYP,Euro,EUR,1,Nicosia,35.1856,33.3823
+central bank of curaçao and sint maarten,CUW,Netherlands Antillean Guilder,ANG,0,Willemstad,12.1091,-68.93
+reserve bank of malawi,MWI,Malawi Kwacha,MWK,0,Lilongwe,-13.9626,33.7741
+central bank of hungary,HUN,Forint,HUF,0,Budapest,47.4979,19.0402
+central bank of solomon islands,SLB,Solomon Islands Dollar,SBD,0,Honiara,-9.4456,159.9729
+croatian national bank,HRV,Euro,EUR,0,Zagreb,45.815,15.9819
+central bank of the bahamas,BHS,Bahamian Dollar,BSD,0,Nassau,25.0343,-77.3963
+central bank of the republic of kosovo,KSV,NA,NA,0,Pristina,42.6629,21.1655
+central bank of bosnia and herzegovina,BIH,Convertible Mark,BAM,0,Sarajevo,43.8563,18.4131
+bank of slovenia,SVN,Euro,EUR,1,Ljubljana,46.0569,14.5058
+bank of latvia,LVA,Euro,EUR,1,Riga,56.9496,24.1052
+bank of sierra leone,SLE,Leone,SLL,0,Freetown,8.4657,-13.2317
+central bank of nepal,NPL,Nepalese Rupee,NPR,0,Kathmandu,27.7172,85.324
+federal reserve bank of boston,USA,US Dollar,USD,1,Boston,42.3601,-71.0589
+central bank of seychelles,SYC,Seychelles Rupee,SCR,0,Victoria,-4.6191,55.4513
+central bank of kuwait,KWT,Kuwaiti Dinar,KWD,0,Kuwait City,29.3759,47.9774
+central bank of brazil,BRA,Brazilian Real,BRL,0,Brasília,-15.7942,-47.8822
+international monetary fund,,,,,Washington,38.9072,-77.0369
+federal reserve bank of san francisco,USA,US Dollar,USD,1,San Francisco,37.7749,-122.4194
+central bank of the united arab emirates,ARE,UAE Dirham,AED,0,Abu Dhabi,24.4539,54.3773
+bank of algeria,DZA,Algerian Dinar,DZD,0,Algiers,36.7538,3.0588
+central bank of samoa,WSM,Tala,WST,0,Apia,-13.8507,-171.7512
+central bank of colombia,COL,Colombian Peso,COP,0,Bogotá,4.711,-74.0721
+bank of morocco,MAR,Moroccan Dirham,MAD,0,Rabat,34.0209,-6.8416
+federal reserve bank of richmond,USA,US Dollar,USD,1,Richmond,37.5407,-77.436
+maldives monetary authority,MDV,Rufiyaa,MVR,0,Malé,4.1755,73.5093
+national bank of slovakia,SVK,Euro,EUR,1,Bratislava,48.1486,17.1077
+federal reserve bank of atlanta,USA,US Dollar,USD,1,Atlanta,33.749,-84.388
+bank of mozambique,MOZ,Mozambique Metical,MZN,0,Maputo,-25.8918,32.6053
+european monetary institute,,,,,Frankfurt,50.1109,8.6821
+central bank of uruguay,URY,Peso Uruguayo,UYU,0,Montevideo,-34.9011,-56.1645
+central bank of jordan,JOR,Jordanian Dinar,JOD,0,Amman,31.9539,35.9106
+central bank of bolivia,BOL,Boliviano,BOB,0,La Paz,-16.5,-68.15
+bank of guyana,GUY,Guyana Dollar,GYD,0,Georgetown,6.8013,-58.1551
+central bank of aruba,ABW,Aruban Florin,AWG,0,Oranjestad,12.5186,-70.0358
+reserve bank of vanuatu,VUT,Vatu,VUV,0,Port Vila,-17.7333,168.327
+bank of guatemala,GTM,Quetzal,GTQ,0,Guatemala City,14.6349,-90.5069
+central bank of belize,BLZ,Belize Dollar,BZD,0,Belmopan,17.251,-88.759
+bank of tanzania,TZA,Tanzanian Shilling,TZS,0,Dar es Salaam,-6.7924,39.2083
+national bank of cambodia,KHM,Riel,KHR,0,Phnom Penh,11.5564,104.9282
+bank of the netherlands antilles,ANT,Netherlands Antillean Guilder,ANG ,0,Willemstad,12.1091,-68.93
+cayman islands monetary authority,CYM,Cayman Dollar+,KYD,0,George Town,19.2869,-81.3674
+central bank of ecuador,ECU,US Dollar,USD,0,Quito,-0.1807,-78.4678
+central bank of armenia,ARM,Armenian Dram,AMD,0,Yerevan,40.1792,44.4991
+central bank of gambia,GMB,Dalasi,GMD,0,Banjul,13.4549,-16.579
+other,,,,,,,
