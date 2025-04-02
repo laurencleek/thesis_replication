@@ -5,7 +5,7 @@ This folder has the following structure:
 The project consists of 3 empirical chapters:
 
 ## Chapter 2 
-This chapter is currently under review and will upon publication be made available.
+This chapter is accepted for publication at the European Journal of Political Economy.
 
 ### Overview
 This repository contains replication code for "_How Central Bank Independence Shapes Monetary Policy Communication: A Large Language Model Application_".
@@ -69,7 +69,8 @@ R codes should always be run with the working directory set to the root of the f
 
 
 ## Chapter 3
-- `code/py/`: Python source code organized by functionality
+The code in this repository is organised as follows:
+- `code/py/`: Python source code organised by functionality
   - `main/`: Core functionality modules
   - `sequence/`: Sequence analysis modules  
   - `timeseries/`: Time series analysis modules
@@ -85,6 +86,10 @@ R codes should always be run with the working directory set to the root of the f
   - `main.py`: Main execution script
   - `analysis_sequence.py`: Sequence analysis
   - `analysis_timeseries.py`: Time series analysis
+
+By running `main.py`, the code will execute the main analysis and generate the output files. The script is designed to be run from the root level of the project directory. The script will automatically load the necessary data files from the `data/` directory and save the output files in the `output/` directory.
+- The `analysis_sequence.py` script is designed to run the sequence analysis. It will load the necessary data files from the `data/` directory and save the output files in the `output/` directory.  
+- The `analysis_timeseries.py` script is designed to run the time series analysis. It will load the necessary data files from the `data/` directory and save the output files in the `output/` directory.
 
 
 ## Chapter 4
